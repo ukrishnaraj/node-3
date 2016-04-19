@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>login</title>
+  <script src="jquery-1.12.3.js"></script>
+</head>
+
+<body>
+<label>First number</label>
+<input id="num1">
+<label>Second number</label>
+<input id="num2">
+<button id="add">add</button>
+<button id="sub">subtract</button>
+<button id="mul">multiply</button>
+<button id="divide">divide</button>
+
+<script >
+  jQuery(document).ready(function(){
+    $("#add").click(function(){
+      $.ajax({
+        type:'POST',
+        url:'/post',
+        data:{
+          number1:$("#num1").val(),
+          number2:$("#num2").val()
+        },
+        success:function(data){
+          alert("sum=" + data.sum );
+        },
+        error:function(data){
+          alert("error");
+        }
+      });
+    });
+    $("#sub").click(function(){
+      $.ajax({
+        type:'POST',
+        url:'/post',
+        data:{
+          number1:$("#num1").val(),
+          number2:$("#num2").val()
+        },
+        success:function(data){
+          alert("difference=" + data.dif );
+        },
+        error:function(data){
+          alert("error");
+        }
+      });
+    });
+    $("#mul").click(function(){
+      $.ajax({
+        type:'POST',
+        url:'/post',
+        data:{
+          number1:$("#num1").val(),
+          number2:$("#num2").val()
+        },
+        success:function(data){
+          alert("product=" + data.pro );
+        },
+        error:function(data){
+          alert("error");
+        }
+      });
+    });
+    $("#divide").click(function(){
+      $.ajax({
+        type:'POST',
+        url:'/post',
+        data:{
+          number1:$("#num1").val(),
+          number2:$("#num2").val()
+        },
+        success:function(data){
+          alert("quotient=" + data.quo );
+        },
+        error:function(data){
+          alert("error");
+        }
+      });
+    });
+
+  });
+</script>
+</body>
+</html>
